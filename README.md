@@ -1,20 +1,20 @@
 # 🎮 League of Legends Match Outcome Prediction
 
-Predicting the winner of a League of Legends match using machine learning and in-game performance metrics.
+Predicting League of Legends match outcomes using machine learning and in-game performance metrics.
 
 ---
 
-## 📖 Introduction
+## 📖 Project Overview
 
 League of Legends is one of the world's most popular esports titles, generating millions of matches and vast amounts of gameplay data. Understanding which factors contribute to victory can provide valuable insights for players, analysts, and teams.
 
-This project develops a machine learning model capable of predicting match outcomes based on match statistics. Using Logistic Regression implemented in PyTorch, the model learns patterns associated with winning and losing games and evaluates its performance using standard classification metrics.
+This project explores whether gameplay statistics can accurately predict match outcomes. Using Logistic Regression implemented in PyTorch, a binary classification model was developed to classify matches as either wins or losses based on player and team performance metrics.
 
 ---
 
 ## 🎯 Objectives
 
-The primary goals of this project are:
+The primary goals of this project were to:
 
 * Analyze League of Legends match data.
 * Identify gameplay features that influence match outcomes.
@@ -32,13 +32,13 @@ The dataset contains match-level statistics collected from League of Legends gam
 
 Examples of attributes used for prediction:
 
-* Gold earned
+* Gold Earned
 * Kills
 * Deaths
 * Assists
-* Damage dealt
-* Objectives secured
-* Team performance metrics
+* Damage Dealt
+* Vision Control Metrics
+* Team Performance Statistics
 
 ### Target Variable
 
@@ -49,7 +49,7 @@ Examples of attributes used for prediction:
 
 ## ⚙️ Methodology
 
-### 1. Data Preprocessing
+### Data Preprocessing
 
 Before training the model:
 
@@ -58,50 +58,61 @@ Before training the model:
 * Data was standardized using feature scaling.
 * The dataset was split into training and testing sets.
 
-### 2. Model Development
+### Model Development
 
 A Logistic Regression classifier was implemented using PyTorch.
 
 Key components include:
 
-* Linear layer
-* Sigmoid activation
+* Linear Layer
+* Sigmoid Activation Function
 * Binary Cross Entropy Loss
 * Gradient Descent Optimization
 
-### 3. Regularization
+### Regularization
 
-L2 Regularization was introduced to reduce overfitting and improve model generalization.
+L2 Regularization was applied to reduce overfitting and improve model generalization.
 
-### 4. Hyperparameter Tuning
+### Hyperparameter Tuning
 
-Different learning rates and training configurations were explored to improve predictive performance.
+Different learning rates and training configurations were explored to optimize predictive performance.
 
 ---
 
 ## 📈 Model Evaluation
 
-The model was assessed using:
+The model was evaluated using:
 
 * Accuracy Score
 * Confusion Matrix
 * Classification Report
 * ROC Curve
-* Area Under Curve (AUC)
+* Area Under the Curve (AUC)
 
-These metrics provide a comprehensive understanding of model effectiveness and classification quality.
+These metrics provide a comprehensive understanding of classification performance and predictive capability.
 
 ---
 
-## 🔍 Feature Importance Analysis
+## 📊 Results
 
-After training, model coefficients were analyzed to determine which gameplay statistics had the strongest influence on match outcomes.
+### ROC-AUC Analysis
 
-This analysis helps identify:
+![ROC Curve](images/roc_auc.png)
 
-* Key winning indicators
-* Important strategic factors
-* High-impact gameplay metrics
+The ROC curve demonstrates the model's ability to distinguish between winning and losing teams across multiple classification thresholds.
+
+### Feature Importance
+
+![Feature Importance](images/feature_importance.png)
+
+Feature importance analysis highlights the gameplay metrics that contribute most strongly to match outcomes.
+
+### Key Findings
+
+* Gold earned emerged as one of the strongest predictors of victory.
+* Higher kill counts were strongly associated with winning outcomes.
+* Vision control metrics contributed positively to match performance.
+* Logistic Regression achieved meaningful predictive performance despite its relatively simple architecture.
 
 ---
 
@@ -113,7 +124,7 @@ This analysis helps identify:
 | PyTorch          | Model Development          |
 | Pandas           | Data Manipulation          |
 | Scikit-Learn     | Evaluation & Preprocessing |
-| Matplotlib       | Visualization              |
+| Matplotlib       | Data Visualization         |
 | Jupyter Notebook | Development Environment    |
 
 ---
@@ -123,9 +134,14 @@ This analysis helps identify:
 ```text
 League-of-Legends-Match-Predictor/
 │
-├── league-of-legends-match-predictor.ipynb
 ├── README.md
 ├── requirements.txt
+├── league-of-legends-match-predictor.ipynb
+│
+├── images/
+│   ├── roc_auc.png
+│   └── feature_importance.png
+│
 └── saved_model.pth
 ```
 
@@ -133,14 +149,14 @@ League-of-Legends-Match-Predictor/
 
 ## 💡 Key Learnings
 
-Through this project, I gained practical experience in:
+Through this project, I gained practical experience with:
 
 * Binary Classification Problems
 * Machine Learning Workflows
 * Data Preprocessing Techniques
 * Model Evaluation Strategies
 * Hyperparameter Optimization
-* Interpreting Model Predictions
+* Feature Interpretation and Analysis
 
 ---
 
@@ -148,16 +164,15 @@ Through this project, I gained practical experience in:
 
 Potential enhancements include:
 
-* Testing advanced models such as Random Forests and XGBoost.
-* Incorporating additional match statistics.
-* Building a real-time prediction dashboard.
-* Comparing multiple machine learning approaches.
+* Comparing performance with Random Forest and XGBoost models.
+* Incorporating additional gameplay statistics.
+* Building an interactive prediction dashboard.
+* Exploring advanced feature engineering techniques.
 
 ---
 
 ## 👨‍💻 Author
 
-Samridhi Bhardwaj
+**Samridhi Bhardwaj**
 
-
-Developed as part of academic coursework focused on predictive analytics and machine learning applications in esports.
+Originally developed as part of a Machine Learning course project and later refined for portfolio presentation.
