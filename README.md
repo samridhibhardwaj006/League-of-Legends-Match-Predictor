@@ -97,13 +97,13 @@ These metrics provide a comprehensive understanding of classification performanc
 
 ### ROC-AUC Analysis
 
-![ROC Curve](images/roc_auc.png)
+![ROC Curve](images/roc_auc_curve.png)
 
 The ROC curve demonstrates the model's ability to distinguish between winning and losing teams across multiple classification thresholds.
 
 ### Feature Importance
 
-![Feature Importance](images/feature_importance.png)
+![Feature Importance](images/feature_importance_analysis.png)
 
 Feature importance analysis highlights the gameplay metrics that contribute most strongly to match outcomes.
 
